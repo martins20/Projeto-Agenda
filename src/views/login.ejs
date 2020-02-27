@@ -1,13 +1,13 @@
 <%- include('includes/head') %>
 <%- include('includes/nav') %>
 
-  <div class="containet">
+  <div class="container">
     <div class="row">
       <div class="col-lg-2"></div>
       
       <div class="col-lg-8 my-3">
         <h1 class="text-center">Login</h1>
-          <p class="text-center lead">Faça login ou Cadastre-se abaixo</p>
+          <p class="text-center lead">Saia para Cadastrar um novo usuário</p>
 
           <%- include('includes/messages') %>
 
@@ -34,7 +34,7 @@
               <h4>Login</h4>
               <p>Entre com seu e-mail e senha !</p>
               
-              <form action="/login" method="POST">
+              <form action="/login/login" method="POST">
                 <input type="hidden" name="_csrf" value=<%= csrfToken %>>
                 <div class="form-group">
                   <label>E-mail</label>
