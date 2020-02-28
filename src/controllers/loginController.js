@@ -5,7 +5,7 @@ exports.Index = (req, res) => {
     return res.render('login')
 }
 
-exports.Store = async (req, res) => {
+exports.Create = async (req, res) => {
     try {
         const login = new Login(req.body)
 
@@ -58,3 +58,4 @@ exports.LogOut = (req, res) => {
     req.session.destroy()
     res.redirect('/')
 }
+

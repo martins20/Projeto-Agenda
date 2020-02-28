@@ -13,7 +13,7 @@ route.get('/', homeController.Index)
 
 route.get('/login', loginController.Index)
 
-route.post('/login/register', loginController.Store)
+route.post('/login/register', loginController.Create)
 
 route.post('/login/login', loginController.Login)
 
@@ -21,6 +21,10 @@ route.get('/login/logout', loginController.LogOut)
 
 // Rotas de Contato
 route.get('/contato', loginRequired, contatoController.Index)
-route.post('/contato/register', loginRequired, contatoController.Store)
+route.post('/contato/register', loginRequired, contatoController.Create)
+route.get('/contato/:id', loginRequired, contatoController.EditIndex)
+route.post('/contato/edit/:id', loginRequired, contatoController.Edit)
+route.get('/contato/delete/:id', loginRequired, contatoController.Delete)
+
 
 module.exports = route
