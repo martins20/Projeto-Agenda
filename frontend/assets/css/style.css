@@ -1,0 +1,16 @@
+body {
+    background-color: #e4ccff;
+}
+
+.agenda {
+    font-size: 4em;
+    color: #5b3685;
+
+}
+
+.col-lg-10 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 

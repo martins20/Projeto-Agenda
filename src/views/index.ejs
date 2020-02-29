@@ -6,16 +6,20 @@
       <div class="col-lg-1"></div>
       
       <div class="col-lg-10 my-3">
-        <h1 class="text-center text-primary">Agenda</h1>
-        <%- include('includes/messages') %>
-
+        <h1 class="text-center text-primary"><i class="fas fa-address-book agenda"></i></h1>
+        
         <% if(contatos.length > 0 && user) {%>        
-         
+          
           <%- include('includes/table')%>
-
-        <% } else {%>
-          <p class="lead text-center display-5">Cadastre-se ou entre em uma Conta</p>
+          
+          <% } else {%>
+            <p class="lead text-center display-4">Agenda 2020</p>
+            <p class="lead text-center display-5">Faça login ou Cadastre-se abaixo</p>
+            <%- include('includes/messages') %>
+          <div class="m-4"></div>
+          <%- include('includes/formulario') %>
         <% } %>
+
       </div>
 
       <div class="col-lg-1"></div>
