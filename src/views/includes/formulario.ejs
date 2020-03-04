@@ -2,10 +2,10 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-lg">
+        <div class="col-lg my-3">
           <h4>Faça seu Cadastro</h4>
           <p>Preencha com seus dados e crie sua conta !</p>
-          <form action="/login/register" method="POST">
+          <form  class='form-cadastro' action="/login/register" method="POST">
             <input type="hidden" name="_csrf" value=<%= csrfToken %>>
             <div class="form-group">
               <label>Seu Melhor E-mail</label>
@@ -20,11 +20,11 @@
     
         </div>
     
-        <div class="col-lg">
+        <div class="col-lg my-3">
           <h4>Login</h4>
           <p>Entre com seu e-mail e senha !</p>
           
-          <form action="/login/login" method="POST">
+          <form class='form-login' action="/login/login" method="POST">
             <input type="hidden" name="_csrf" value=<%= csrfToken %>>
             <div class="form-group">
               <label>E-mail</label>
