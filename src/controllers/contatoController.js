@@ -18,7 +18,7 @@ exports.Create = async (req, res) => {
     }
   
     req.flash('success', "Contato registrado com sucesso !")
-    req.session.save(() => res.redirect(`/contato/${contato.contato.id}`))
+    req.session.save(() => res.redirect(`/`))
       return
 
   } catch (e) {
@@ -53,7 +53,7 @@ exports.Edit = async (req, res) => {
     }
   
     req.flash('success', "Contato Editado com sucesso !")
-    req.session.save(() => res.redirect(`/contato/${contato.contato.id}`))
+    req.session.save(() => res.redirect(`/`))
       return
       
   } catch (e) {
@@ -68,8 +68,11 @@ exports.Delete = async (req, res) => {
 
   const contato = await Contato.delete(req.params.id)
 
-  if(!contato) return res.render('404')
+  if(!contato) {
+    return res.render('404')
+  }
 
   req.flash('success', "Contato Excluido com sucesso !")
   req.session.save(() => res.redirect('back'))
-    return}
+    return
+}

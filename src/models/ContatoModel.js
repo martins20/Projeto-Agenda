@@ -31,7 +31,7 @@ class Contato {
         this.cleanUp()
         
         if(this.body.email && !validator.isEmail(this.body.email)) this.errors.push('E-mail inválido.')
-        if(!this.body.name) this.errors.push('Nome é um campo obrigatório')
+        if(!this.body.name) this.errors.push('Nome é um campo obrigatório.')
         if(!this.body.email && !this.body.telefone) {
             this.errors.push('Pelomenos 1 contado precisa ser enviado: E-mail ou Telefone.')
         }
@@ -68,7 +68,7 @@ class Contato {
     static async delete(id) {
         if(typeof id !== 'string') return
     
-        const user = await ContatoModel.findOneAndDelete({id: id})
+        const user = await ContatoModel.findOneAndDelete({_id: id})
     
         return user
     }

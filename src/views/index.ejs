@@ -8,16 +8,22 @@
       <div class="col-lg-10 my-3">
         <h1 class="text-center text-primary"><i class="fas fa-address-book agenda"></i></h1>
         
-        <% if(contatos.length > 0 && user) {%>        
+        <% if(contatos.length > 0 && user) {%>      
+          <p class="lead text-center display-4">Agenda</p>
+          <p class="lead text-center display-5">Contatos</p> 
+          
+          <%- include('includes/messages') %>
           
           <%- include('includes/table')%>
           
           <% } else {%>
             <p class="lead text-center display-4">Agenda 2020</p>
-            <p class="lead text-center display-5">Faça login ou Cadastre-se abaixo</p>
-            <%- include('includes/messages') %>
-          <div class="m-4"></div>
-          <%- include('includes/formulario') %>
+            <% if (user) { %>
+              <a href="/contato"><button class="btn btn-lg btn-outline-dark my-5">Adicionar Contato</button></a>
+              <% } else { %>
+                <a href="/login"><button class="btn btn-lg btn-outline-dark my-5">Iniciar</button></a>
+              <% } %>
+              
         <% } %>
 
       </div>

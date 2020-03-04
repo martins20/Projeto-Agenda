@@ -58,6 +58,6 @@ exports.Login = async (req, res) => {
 
 exports.LogOut = (req, res) => {
     req.session.destroy()
-    res.redirect('/')
+    res.redirect('back')
 }
 
