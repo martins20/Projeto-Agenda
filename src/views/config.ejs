@@ -1,0 +1,46 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      
+      <div class="col-lg-10 my-3">
+        <h1 class="text-center text-primary"><i class="fas fa-pencil-alt"></i></i></h1>
+        
+        <p class="lead text-center display-4">Preferências</p>
+        
+        <div class="container">
+            <div class="responsive-table">
+                <table class="table my-3 w-2">
+                    <tr>
+                        <td colspan="2">Nome</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">E-mail</td>
+                    </tr>
+                    <tr>
+                        <td>Mudar senha:</td>
+                        <td >
+                            <form action="/changePassword" method="post" id="senhaForm">
+                                <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password" placeholder="Senha Atual" class="mb-2">
+                                    <br>
+                                    <input type="password" class="form-control" name="newPassword" placeholder="Nova Senha" class="mb">
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-outline-dark">Mudar Senha</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+
+<%- include('includes/footer') %>

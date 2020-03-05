@@ -17,11 +17,12 @@
           <%- include('includes/table')%>
           
           <% } else {%>
-            <p class="lead text-center display-4">Agenda 2020</p>
+            <p class="lead text-center display-4">Agenda</p>
             <% if (user) { %>
               <a href="/contato"><button class="btn btn-lg btn-outline-dark my-5">Adicionar Contato</button></a>
               <% } else { %>
-                <a href="/login"><button class="btn btn-lg btn-outline-dark my-5">Iniciar</button></a>
+                <h3 class="lead display-5">Para Gerenciar / Adicionar contatos Entre com sua conta ou Registre-se </h3>
+                <a href="/login"><button class="btn  btn-outline-dark my-1">Iniciar</button></a>
               <% } %>
               
         <% } %>

@@ -1,6 +1,6 @@
 .agenda {
     font-size: 4em;
-    color: #303081;
+    color: black;
 }
 
 .col-lg-10 {
@@ -8,4 +8,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-} 
+}
+
+.fa-pencil-alt {
+    font-size: 4em;
+    text-align: center;
+    color: #303081;
+}
+
+#senhaForm .form-control {
+    max-width: 250px;
+}

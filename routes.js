@@ -3,6 +3,7 @@ const route = express.Router()
 const homeController = require('./src/controllers/homeController')
 const loginController = require('./src/controllers/loginController')
 const contatoController = require('./src/controllers/contatoController')
+const configController = require('./src/controllers/configController')
 
 const { loginRequired } = require('./src/middlewares/middleware')
 
@@ -12,11 +13,8 @@ route.get('/', homeController.Index)
 //Rotas de Login
 
 route.get('/login', loginController.Index)
-
 route.post('/login/register', loginController.Create)
-
 route.post('/login/login', loginController.Login)
-
 route.get('/login/logout', loginController.LogOut)
 
 // Rotas de Contato
@@ -26,5 +24,9 @@ route.get('/contato/:id', loginRequired, contatoController.EditIndex)
 route.post('/contato/edit/:id', loginRequired, contatoController.Edit)
 route.get('/contato/delete/:id', loginRequired, contatoController.Delete)
 
+// Rotas de Configurações
+
+route.get('/config', loginRequired, configController.Index)
+route.post('/config/changePassword', loginRequired, configController.Edit)
 
 module.exports = route
